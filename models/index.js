@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const dbName = "invitation_db";
 
 const db = new Sequelize(
-    process.env.DATABASE_URL || "postgres://localhost:5432/invitation_db",
+    process.env.DATABASE_URL || "postgres://localhost:3001/invitation_db",
     {
         database: dbName,
         dialect: "postgres",
