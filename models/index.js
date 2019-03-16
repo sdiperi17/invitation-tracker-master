@@ -1,20 +1,23 @@
 const Sequelize = require("sequelize");
 const dbName = "invitation_db";
 
-// const db = new Sequelize({
-//     database: dbName,
-//     dialect: "postgres",
-//     define: {
-//         underscored: true
-//     }
-// });
-
 const db = new Sequelize(
     process.env.DATABASE_URL || "postgres://localhost:5432/invitation_db",
     {
-        dialect: "postgres"
+        database: dbName,
+        dialect: "postgres",
+        define: {
+            underscored: true
+        }
     }
 );
+
+// const db = new Sequelize(
+//     process.env.DATABASE_URL || "postgres://localhost:5432/invitation_db",
+//     {
+//         dialect: "postgres"
+//     }
+// );
 
 const Recipient = require("./Recipient")(db, Sequelize);
 const Survey = require("./Survey")(db, Sequelize);
