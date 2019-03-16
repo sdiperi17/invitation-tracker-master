@@ -5,8 +5,9 @@
     "main": "index.js",
     "scripts": {
         "start": "node app.js",
+        "build": "react-scripts build",
         "server": "nodemon app.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo \"Error: no test specifed\" && exit 1",
         "client": "npm run start --prefix client",
         "webhook": "./sendgrid_webhook.sh",
         "db:init": "dropdb --if-exists invitation_db && createdb invitation_db",
