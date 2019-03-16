@@ -32,8 +32,8 @@ const apiRoutes = require("./routes/api");
 app.use("/api", apiRoutes);
 app.use("/auth", authRoutes);
 
-// Static hosting for built files
-app.use("/", express.static("./build/"));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
 
 if (process.env.NODE_ENV == "production") {
     // Express will serve up production assets
