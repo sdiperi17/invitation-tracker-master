@@ -33,7 +33,7 @@ app.use("/api", apiRoutes);
 app.use("/auth", authRoutes);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
 if (process.env.NODE_ENV == "production") {
     // Express will serve up production assets
@@ -60,3 +60,5 @@ if (process.env.NODE_ENV == "production") {
 app.listen(port, function() {
     console.log(`listening ${port}`);
 });
+
+// "heroku-postbuild": "cd client && npm install && npm run build"
